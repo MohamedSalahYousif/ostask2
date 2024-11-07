@@ -1,0 +1,3 @@
+# app/utils.py
+def greet(name):
+    return f"Hello, {name}"
