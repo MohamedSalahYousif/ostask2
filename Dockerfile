@@ -1,11 +1,13 @@
-FROM python:3.9-alpine
+FROM alpine
 
 WORKDIR /app
 
-COPY requirements.txt .
-
-RUN pip install --no-cache-dir -r requirements.txt
-
 COPY . .
 
-CMD ["python", "app/main.py"]
+RUN apk add --update python3 py3-pip
+
+RUN pip3 install flask
+
+EXPOSE 8080
+
+CMD python3 app1.py
